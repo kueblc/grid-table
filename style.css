@@ -28,27 +28,12 @@ body {
 	background: #998;
 }
 
-.grid-table {
+.grid-table-content {
 	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-.grid-table-labels {
-	z-index: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.rtl {
-	direction: rtl;
-}
-
-.rtl > .vertical-ruler {
-	background-position: right top;
+	min-height: 100%;
+	min-width: 100%; /* in case content is smaller than the viewport */
+	display: flex;
+	flex-direction: column;
 }
 
 .top { top: 0; }
@@ -66,6 +51,17 @@ body {
 
 .top, .left, .bottom, .right {
 	position: sticky;
+}
+
+.mid {
+	flex: auto;
+}
+
+.content-area {
+	flex: auto;
+	display: flex; /* use flex for horizontal and vertical centering */
+	align-items: center; /* vertical centering */
+	justify-content: center; /* horizontal centering */
 }
 
 .horizontal-ruler {
@@ -110,38 +106,6 @@ body {
 	z-index: 1;
 }
 
-.inner-shadow {
-	position: sticky;
-	top: 32px;
-	left: 32px;
-	margin: 32px;
-	box-shadow: 0 0 4px inset;
-	height: calc(100% - 64px);
-}
-
-.grid-table-content {
-	position: absolute;
-	min-height: 100%;
-	min-width: 100%; /* in case content is smaller than the viewport */
-	display: flex;
-	flex-direction: column;
-}
-
-.mid {
-	flex: auto;
-}
-
-.grid-table-labels, .inner-shadow {
-	pointer-events: none;
-}
-
-.content-area {
-	flex: auto;
-	display: flex; /* use flex for horizontal and vertical centering */
-	align-items: center; /* vertical centering */
-	justify-content: center; /* horizontal centering */
-}
-
 .content {
 	width: 1600px;
 	height: 1024px;
@@ -158,9 +122,17 @@ body {
 	cursor: crosshair;
 }
 
-
-
 .content:active {
 	cursor: cell;
+}
+
+.inner-shadow {
+	pointer-events: none;
+	position: sticky;
+	top: 32px;
+	left: 32px;
+	margin: 32px;
+	box-shadow: 0 0 4px inset;
+	height: calc(100% - 64px);
 }
 
