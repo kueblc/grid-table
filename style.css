@@ -51,39 +51,28 @@ body {
 	background-position: right top;
 }
 
-.label-right {
-	position: sticky;
-	right: 0;
-	height: 100%;
+.top { top: 0; }
+.left { left: 0; }
+.bottom { bottom: 0; }
+.right { right: 0; }
+
+.top, .mid, .bottom {
+	display: flex;
 }
 
-.label-top {
-	position: sticky;
-	top: 0;
-	width: 100%;
+.top, .bottom {
+	z-index: 1;
 }
 
-.label-left {
+.top, .left, .bottom, .right {
 	position: sticky;
-	left: 0;
-	height: 100%;
-}
-
-.label-top-left {
-	position: sticky;
-	top: 0;
-	left: 0;
-}
-
-.label-top-right {
-	position: sticky;
-	top: 0;
-	right: 0;
 }
 
 .horizontal-ruler {
 	height: 32px;
+	flex: auto;
 	border: 1px solid black;
+	border-width: 1px 0;
 	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
@@ -95,6 +84,7 @@ body {
 .vertical-ruler {
 	width: 32px;
 	border: 1px solid black;
+	border-width: 0 1px;
 	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
@@ -104,38 +94,37 @@ body {
 }
 
 .corner {
+	position: sticky;
 	width: 32px;
 	height: 32px;
 	border: 1px solid black;
 	background: #eeeee0;
+	z-index: 1;
 }
 
 .inner-shadow {
 	position: sticky;
 	top: 32px;
 	left: 32px;
-	margin: 32px 32px 0 32px;
+	margin: 32px;
 	box-shadow: 0 0 4px inset;
-	height: calc(100% - 32px);
+	height: calc(100% - 64px);
 }
 
 .grid-table-content {
 	position: absolute;
 	min-height: 100%;
 	min-width: 100%; /* in case content is smaller than the viewport */
-	display: flex; /* use flex for horizontal and vertical centering */
-	align-items: center; /* vertical centering */
-	justify-content: center; /* horizontal centering */
 }
 
 .grid-table-labels, .inner-shadow {
 	pointer-events: none;
 }
 
-#content {
+.content {
 	width: 1600px;
 	height: 1024px;
-	margin: 129px;
+	margin: 128px;
 	border: 1px solid black;
 	box-shadow: 0 0 16px;
 	background:
@@ -148,7 +137,7 @@ body {
 	cursor: crosshair;
 }
 
-#content:active {
+.content:active {
 	cursor: cell;
 }
 
