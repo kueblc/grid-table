@@ -15,8 +15,6 @@ html, body {
 body {
 	position: fixed;
 	overflow: hidden;
-	
-	padding: 20px;
 }
 
 .ruler-viewport {
@@ -67,9 +65,6 @@ body {
 .horizontal-ruler {
 	height: 32px;
 	flex: auto;
-	border: 1px solid black;
-	border-width: 1px 0;
-	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
 		linear-gradient(90deg, rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
@@ -83,9 +78,6 @@ body {
 
 .vertical-ruler {
 	width: 32px;
-	border: 1px solid black;
-	border-width: 0 1px;
-	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
 		linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
@@ -101,7 +93,6 @@ body {
 	position: sticky;
 	width: 32px;
 	height: 32px;
-	border: 1px solid black;
 	background: #eeeee0;
 	z-index: 1;
 }
@@ -122,10 +113,16 @@ body {
 .overlay {
 	pointer-events: none;
 	position: sticky;
-	top: 32px;
-	left: 32px;
-	margin: 32px;
-	height: calc(100% - 64px);
+}
+
+.inner-shadow {
+	box-shadow: 0 0 4px inset;
+	top: 16px;
+	left: 16px;
+	margin: 16px;
+	height: calc(100% - 32px);
+	border: 16px solid #eeeee0;
+	border-radius: 32px;
 }
 
 .graph-paper {
@@ -138,7 +135,4 @@ body {
 	background-position: -1px -1px; /* so we don't start on a grid line */
 }
 
-.inner-shadow {
-	box-shadow: 0 0 4px inset;
-}
 
