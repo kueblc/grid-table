@@ -23,8 +23,6 @@ body {
 	overflow: auto;
 	position: relative;
 	
-	border: 3px solid blue;
-	border-radius: 8px;
 	width: 100%;
 	height: 100%;
 }
@@ -46,6 +44,10 @@ body {
 
 .rtl {
 	direction: rtl;
+}
+
+.rtl > .vertical-ruler {
+	background-position: right top;
 }
 
 .label-right {
@@ -72,33 +74,68 @@ body {
 	left: 0;
 }
 
+.label-top-right {
+	position: sticky;
+	top: 0;
+	right: 0;
+}
+
 .horizontal-ruler {
-	height: 30px;
-	border: 3px solid black;
-	background: #ccc url(ruler.png);
+	height: 32px;
+	border: 2px solid black;
+	/*box-shadow: 0 0 4px;*/
+	background:
+		linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(0,0,0,.2) 1px, transparent 1px), #ccc;
+	background-size: 64px 16px, 16px 8px;
+	background-repeat: repeat-x;
 }
 
 .vertical-ruler {
-	width: 30px;
-	border: 3px solid black;
-	background: #ccc url(ruler.png);
+	width: 32px;
+	border: 2px solid black;
+	/*box-shadow: 0 0 4px;*/
+	background:
+		linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
+		linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), #ccc;
+	background-size: 16px 64px, 8px 16px;
+	background-repeat: repeat-y;
 }
 
 .corner {
-	width: 30px;
-	height: 30px;
-	border: 3px solid black;
+	width: 32px;
+	height: 32px;
+	border: 2px solid black;
 	background: #ccc;
+}
+
+.inner-shadow {
+	position: sticky;
+	top: 32px;
+	left: 32px;
+	margin: 32px;
+	box-shadow: 0 0 4px inset;
+	width: calc(100% - 64px);
+	height: calc(100% - 32px);
 }
 
 .grid-table-content {
 	position: absolute;
+	
+	background: #999;
 }
 
 
 #content {
-	width: 5000px;
-	height: 5000px;
-	background: url(grid.png);
+	width: 1600px;
+	height: 1600px;
+	margin: 130px;
+	box-shadow: 0 0 16px;
+	background:
+		linear-gradient(90deg, rgba(0,0,255,.3) 1px, transparent 1px),
+		linear-gradient(rgba(0,0,255,.3) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(0,0,255,.2) 1px, transparent 1px),
+		linear-gradient(rgba(0,0,255,.2) 1px, transparent 1px), #fefeff;
+	background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
 }
 
