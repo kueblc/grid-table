@@ -81,6 +81,10 @@ body {
 	background-repeat: repeat-x;
 }
 
+.bottom > .horizontal-ruler {
+	background-position: left bottom;
+}
+
 .vertical-ruler {
 	width: 32px;
 	border: 1px solid black;
@@ -91,6 +95,10 @@ body {
 		linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
 	background-size: 16px 64px, 8px 16px;
 	background-repeat: repeat-y;
+}
+
+.right.vertical-ruler {
+	background-position: right top;
 }
 
 .corner {
