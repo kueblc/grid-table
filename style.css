@@ -83,7 +83,7 @@ body {
 
 .horizontal-ruler {
 	height: 32px;
-	border: 2px solid black;
+	border: 1px solid black;
 	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
@@ -94,7 +94,7 @@ body {
 
 .vertical-ruler {
 	width: 32px;
-	border: 2px solid black;
+	border: 1px solid black;
 	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
@@ -106,7 +106,7 @@ body {
 .corner {
 	width: 32px;
 	height: 32px;
-	border: 2px solid black;
+	border: 1px solid black;
 	background: #eeeee0;
 }
 
@@ -135,7 +135,8 @@ body {
 #content {
 	width: 1600px;
 	height: 1024px;
-	margin: 130px;
+	margin: 129px;
+	border: 1px solid black;
 	box-shadow: 0 0 16px;
 	background:
 		linear-gradient(90deg, rgba(0,0,255,.3) 1px, transparent 1px),
@@ -143,6 +144,7 @@ body {
 		linear-gradient(90deg, rgba(0,0,255,.2) 1px, transparent 1px),
 		linear-gradient(rgba(0,0,255,.2) 1px, transparent 1px), #fefeff;
 	background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+	background-position: -1px -1px; /* so we don't start on a grid line */
 	cursor: crosshair;
 }
 
