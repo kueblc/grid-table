@@ -19,7 +19,7 @@ body {
 	padding: 20px;
 }
 
-.grid-table-viewport {
+.ruler-viewport {
 	overflow: auto;
 	position: relative;
 	
@@ -28,7 +28,7 @@ body {
 	background: #998;
 }
 
-.grid-table-content {
+.ruler-content {
 	position: absolute;
 	min-height: 100%;
 	min-width: 100%; /* in case content is smaller than the viewport */
@@ -112,13 +112,6 @@ body {
 	margin: 128px;
 	border: 1px solid black;
 	box-shadow: 0 0 16px;
-	background:
-		linear-gradient(90deg, rgba(0,0,255,.3) 1px, transparent 1px),
-		linear-gradient(rgba(0,0,255,.3) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(0,0,255,.2) 1px, transparent 1px),
-		linear-gradient(rgba(0,0,255,.2) 1px, transparent 1px), #fefeff;
-	background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
-	background-position: -1px -1px; /* so we don't start on a grid line */
 	cursor: crosshair;
 }
 
@@ -126,13 +119,26 @@ body {
 	cursor: cell;
 }
 
-.inner-shadow {
+.overlay {
 	pointer-events: none;
 	position: sticky;
 	top: 32px;
 	left: 32px;
 	margin: 32px;
-	box-shadow: 0 0 4px inset;
 	height: calc(100% - 64px);
+}
+
+.graph-paper {
+	background:
+		linear-gradient(90deg, rgba(0,0,255,.3) 1px, transparent 1px),
+		linear-gradient(rgba(0,0,255,.3) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(0,0,255,.2) 1px, transparent 1px),
+		linear-gradient(rgba(0,0,255,.2) 1px, transparent 1px), #fefeff;
+	background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+	background-position: -1px -1px; /* so we don't start on a grid line */
+}
+
+.inner-shadow {
+	box-shadow: 0 0 4px inset;
 }
 
