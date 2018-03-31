@@ -25,6 +25,7 @@ body {
 	
 	width: 100%;
 	height: 100%;
+	background: #998;
 }
 
 .grid-table {
@@ -86,7 +87,7 @@ body {
 	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(0,0,0,.2) 1px, transparent 1px), #ccc;
+		linear-gradient(90deg, rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
 	background-size: 64px 16px, 16px 8px;
 	background-repeat: repeat-x;
 }
@@ -97,7 +98,7 @@ body {
 	/*box-shadow: 0 0 4px;*/
 	background:
 		linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
-		linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), #ccc;
+		linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
 	background-size: 16px 64px, 8px 16px;
 	background-repeat: repeat-y;
 }
@@ -106,29 +107,34 @@ body {
 	width: 32px;
 	height: 32px;
 	border: 2px solid black;
-	background: #ccc;
+	background: #eeeee0;
 }
 
 .inner-shadow {
 	position: sticky;
 	top: 32px;
 	left: 32px;
-	margin: 32px;
+	margin: 32px 32px 0 32px;
 	box-shadow: 0 0 4px inset;
-	width: calc(100% - 64px);
 	height: calc(100% - 32px);
 }
 
 .grid-table-content {
 	position: absolute;
-	
-	background: #999;
+	min-height: 100%;
+	min-width: 100%; /* in case content is smaller than the viewport */
+	display: flex; /* use flex for horizontal and vertical centering */
+	align-items: center; /* vertical centering */
+	justify-content: center; /* horizontal centering */
 }
 
+.grid-table-labels, .inner-shadow {
+	pointer-events: none;
+}
 
 #content {
 	width: 1600px;
-	height: 1600px;
+	height: 1024px;
 	margin: 130px;
 	box-shadow: 0 0 16px;
 	background:
@@ -137,5 +143,10 @@ body {
 		linear-gradient(90deg, rgba(0,0,255,.2) 1px, transparent 1px),
 		linear-gradient(rgba(0,0,255,.2) 1px, transparent 1px), #fefeff;
 	background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+	cursor: crosshair;
+}
+
+#content:active {
+	cursor: cell;
 }
 
