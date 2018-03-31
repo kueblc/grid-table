@@ -115,10 +115,23 @@ body {
 	position: absolute;
 	min-height: 100%;
 	min-width: 100%; /* in case content is smaller than the viewport */
+	display: flex;
+	flex-direction: column;
+}
+
+.mid {
+	flex: auto;
 }
 
 .grid-table-labels, .inner-shadow {
 	pointer-events: none;
+}
+
+.content-area {
+	flex: auto;
+	display: flex; /* use flex for horizontal and vertical centering */
+	align-items: center; /* vertical centering */
+	justify-content: center; /* horizontal centering */
 }
 
 .content {
@@ -136,6 +149,8 @@ body {
 	background-position: -1px -1px; /* so we don't start on a grid line */
 	cursor: crosshair;
 }
+
+
 
 .content:active {
 	cursor: cell;
