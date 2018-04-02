@@ -43,7 +43,7 @@ body {
 	display: flex;
 }
 
-.top, .bottom {
+.top {
 	z-index: 1;
 }
 
@@ -98,10 +98,9 @@ body {
 }
 
 .content {
-	width: 1600px;
-	height: 1024px;
+	width: 1599px;
+	height: 1023px;
 	margin: 128px;
-	border: 1px solid black;
 	box-shadow: 0 0 16px;
 	cursor: crosshair;
 }
