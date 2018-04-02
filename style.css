@@ -66,8 +66,8 @@ body {
 	height: 32px;
 	flex: auto;
 	background:
-		linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
+		linear-gradient(90deg, rgba(0,0,0,.3) 1px, #fff 1px, #fff 2px, transparent 2px),
+		linear-gradient(90deg, rgba(0,0,0,.2) 1px, #fff 1px, #fff 2px, transparent 2px), #eeeee0;
 	background-size: 64px 16px, 16px 8px;
 	background-repeat: repeat-x;
 }
@@ -79,8 +79,8 @@ body {
 .vertical-ruler {
 	width: 32px;
 	background:
-		linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px),
-		linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), #eeeee0;
+		linear-gradient(rgba(0,0,0,.3) 1px, #fff 1px, #fff 2px, transparent 2px),
+		linear-gradient(rgba(0,0,0,.2) 1px, #fff 1px, #fff 2px, transparent 2px), #eeeee0;
 	background-size: 16px 64px, 8px 16px;
 	background-repeat: repeat-y;
 }
