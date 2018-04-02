@@ -135,4 +135,21 @@ body {
 	background-position: -1px -1px; /* so we don't start on a grid line */
 }
 
+.hide-corners:before, .hide-corners:after {
+	content: '';
+	display: block;
+	position: sticky;
+	width: 32px;
+	height: 32px;
+	background: #eeeee0;
+	z-index: 1;
+}
+
+.hide-corners:before {
+	left: 0;
+}
+
+.hide-corners:after {
+	right: 0;
+}
 
