@@ -39,32 +39,24 @@ body {
 .bottom { bottom: 0; }
 .right { right: 0; }
 
-.top, .mid, .bottom {
-	display: flex;
-}
-
-.top {
+.top, .left, .bottom, .right {
+	position: sticky;
 	z-index: 1;
 }
 
-.top, .left, .bottom, .right {
-	position: sticky;
-}
-
-.mid {
-	flex: auto;
+.top {
+	z-index: 2;
 }
 
 .content-area {
-	flex: auto;
 	display: flex; /* use flex for horizontal and vertical centering */
 	align-items: center; /* vertical centering */
-	justify-content: center; /* horizontal centering */
+	justify-content: space-between; /* horizontal centering, keep rulers on the outside */
 }
 
 .horizontal-ruler {
 	height: 32px;
-	flex: auto;
+	width: 100%;
 	background:
 		linear-gradient(90deg, rgba(0,0,0,.3) 1px, #fff 1px, #fff 2px, transparent 2px),
 		linear-gradient(90deg, rgba(0,0,0,.2) 1px, #fff 1px, #fff 2px, transparent 2px), #eeeee0;
@@ -72,12 +64,13 @@ body {
 	background-repeat: repeat-x;
 }
 
-.bottom > .horizontal-ruler {
+.bottom.horizontal-ruler {
 	background-position: left bottom;
 }
 
 .vertical-ruler {
 	width: 32px;
+	height: 100%;
 	background:
 		linear-gradient(rgba(0,0,0,.3) 1px, #fff 1px, #fff 2px, transparent 2px),
 		linear-gradient(rgba(0,0,0,.2) 1px, #fff 1px, #fff 2px, transparent 2px), #eeeee0;
@@ -87,14 +80,6 @@ body {
 
 .right.vertical-ruler {
 	background-position: right top;
-}
-
-.corner {
-	position: sticky;
-	width: 32px;
-	height: 32px;
-	background: #eeeee0;
-	z-index: 1;
 }
 
 .content {
@@ -109,18 +94,23 @@ body {
 	cursor: cell;
 }
 
-.overlay {
+.overlay:after {
+	content: '';
+	display: block;
 	pointer-events: none;
 	position: sticky;
-}
-
-.inner-shadow {
-	box-shadow: 0 0 4px inset;
 	top: 16px;
 	left: 16px;
 	margin: 16px;
-	height: calc(100% - 32px);
+	height: calc(100% - 64px);
 	border: 16px solid #eeeee0;
+}
+
+.inner-shadow:after {
+	box-shadow: 0 0 4px inset;
+}
+
+.rounded-corners:after {
 	border-radius: 20px; /* works out to 4px, innerRadius = outerRadius - border-width */
 }
 
@@ -146,10 +136,12 @@ body {
 
 .hide-corners:before {
 	left: 0;
+	float: left;
 }
 
 .hide-corners:after {
 	right: 0;
+	float: right;
 }
 
 .drawing {
