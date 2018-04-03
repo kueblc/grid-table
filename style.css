@@ -39,10 +39,6 @@ body {
 .bottom { bottom: 0; }
 .right { right: 0; }
 
-.top, .mid, .bottom {
-	display: flex;
-}
-
 .top, .left, .bottom, .right {
 	position: sticky;
 	z-index: 1;
@@ -148,9 +144,11 @@ body {
 
 .hide-corners:before {
 	left: 0;
+	float: left;
 }
 
 .hide-corners:after {
 	right: 0;
+	float: right;
 }
 
