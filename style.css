@@ -48,6 +48,10 @@ body {
 	z-index: 1;
 }
 
+.top {
+	z-index: 2;
+}
+
 .mid {
 	flex: auto;
 }
