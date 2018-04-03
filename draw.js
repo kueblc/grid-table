@@ -13,8 +13,8 @@ function DrawingContext( contentArea ){
 	}
 
 	function snapTo( position, unit ){
-		position.x = position.x - position.x % unit
-		position.y = position.y - position.y % unit
+		position.x = Math.round( position.x / unit ) * unit
+		position.y = Math.round( position.y / unit ) * unit
 	}
 
 	function setRectangle( element, x1, y1, x2, y2 ){
