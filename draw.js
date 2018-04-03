@@ -29,6 +29,7 @@ function DrawingContext( contentArea ){
 	}
 
 	function startDrawing( event ){
+		if( event.button !== 0 ) return
 		element = document.createElement('div')
 		element.classList.add('drawing')
 		var mouse = getMouseRelative( contentArea, event )
