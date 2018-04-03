@@ -60,12 +60,12 @@ body {
 	flex: auto;
 	display: flex; /* use flex for horizontal and vertical centering */
 	align-items: center; /* vertical centering */
-	justify-content: center; /* horizontal centering */
+	justify-content: space-between; /* horizontal centering, keep rulers on the outside */
 }
 
 .horizontal-ruler {
 	height: 32px;
-	flex: auto;
+	width: 100%;
 	background:
 		linear-gradient(90deg, rgba(0,0,0,.3) 1px, #fff 1px, #fff 2px, transparent 2px),
 		linear-gradient(90deg, rgba(0,0,0,.2) 1px, #fff 1px, #fff 2px, transparent 2px), #eeeee0;
@@ -79,6 +79,7 @@ body {
 
 .vertical-ruler {
 	width: 32px;
+	height: 100%;
 	background:
 		linear-gradient(rgba(0,0,0,.3) 1px, #fff 1px, #fff 2px, transparent 2px),
 		linear-gradient(rgba(0,0,0,.2) 1px, #fff 1px, #fff 2px, transparent 2px), #eeeee0;
