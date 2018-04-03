@@ -48,12 +48,7 @@ body {
 	z-index: 2;
 }
 
-.mid {
-	flex: auto;
-}
-
 .content-area {
-	flex: auto;
 	display: flex; /* use flex for horizontal and vertical centering */
 	align-items: center; /* vertical centering */
 	justify-content: space-between; /* horizontal centering, keep rulers on the outside */
@@ -69,7 +64,7 @@ body {
 	background-repeat: repeat-x;
 }
 
-.bottom > .horizontal-ruler {
+.bottom.horizontal-ruler {
 	background-position: left bottom;
 }
 
@@ -87,14 +82,6 @@ body {
 	background-position: right top;
 }
 
-.corner {
-	position: sticky;
-	width: 32px;
-	height: 32px;
-	background: #eeeee0;
-	z-index: 1;
-}
-
 .content {
 	width: 1599px;
 	height: 1023px;
@@ -107,18 +94,23 @@ body {
 	cursor: cell;
 }
 
-.overlay {
+.overlay:after {
+	content: '';
+	display: block;
 	pointer-events: none;
 	position: sticky;
-}
-
-.inner-shadow {
-	box-shadow: 0 0 4px inset;
 	top: 16px;
 	left: 16px;
 	margin: 16px;
-	height: calc(100% - 32px);
+	height: calc(100% - 64px);
 	border: 16px solid #eeeee0;
+}
+
+.inner-shadow:after {
+	box-shadow: 0 0 4px inset;
+}
+
+.rounded-corners:after {
 	border-radius: 20px; /* works out to 4px, innerRadius = outerRadius - border-width */
 }
 
